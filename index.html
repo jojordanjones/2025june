@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Operating System 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Lora', serif; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-white shadow sticky top-0 z-10">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold text-indigo-600">Life OS 2025</h1>
+      <ul class="space-x-4 hidden md:flex">
+        <li><a href="#vision" class="text-gray-700 hover:text-indigo-600">Vision</a></li>
+        <li><a href="#system" class="text-gray-700 hover:text-indigo-600">System</a></li>
+        <li><a href="#action" class="text-gray-700 hover:text-indigo-600">Action Plan</a></li>
+        <li><a href="#dashboards" class="text-gray-700 hover:text-indigo-600">Dashboards</a></li>
+        <li><a href="#manifesto" class="text-gray-700 hover:text-indigo-600">Manifesto</a></li>
+        <li><a href="#goals" class="text-gray-700 hover:text-indigo-600">Goal Map</a></li>
+        <li><a href="#knowledge-base" class="text-gray-700 hover:text-indigo-600">Knowledge Base</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 space-y-12">
+    <!-- Vision Section -->
+    <section id="vision">
+      <h2 class="text-3xl font-semibold mb-4">Part I: The Vision - Your "Why"</h2>
+      <p class="mb-4">This interactive knowledge base captures every goal, habit, system, and quote guiding your journey to a balanced, empowered life.</p>
+    </section>
+
+    <!-- Placeholder Sections -->
+    <section id="system">
+      <h2 class="text-3xl font-semibold mb-4">System</h2>
+      <p>Coming soon.</p>
+    </section>
+
+    <section id="action">
+      <h2 class="text-3xl font-semibold mb-4">Action Plan</h2>
+      <p>Coming soon.</p>
+    </section>
+
+    <section id="dashboards">
+      <h2 class="text-3xl font-semibold mb-4">Dashboards</h2>
+      <p>Coming soon.</p>
+    </section>
+
+    <section id="manifesto">
+      <h2 class="text-3xl font-semibold mb-4">Manifesto</h2>
+      <p>Coming soon.</p>
+    </section>
+
+    <section id="goals">
+      <h2 class="text-3xl font-semibold mb-4">Goal Map</h2>
+      <p>Coming soon.</p>
+    </section>
+
+    <!-- Knowledge Base Section -->
+    <section id="knowledge-base" class="space-y-4">
+      <h2 class="text-3xl font-semibold mb-4">Knowledge Base</h2>
+      <input id="search" type="text" placeholder="Search..." class="w-full p-2 border rounded mb-4" />
+      <div id="kb-container" class="space-y-2"></div>
+    </section>
+  </main>
+
+  <script>
+    const knowledgeBase = {
+      "Identity & Vision": {
+        "Identity Statements": [
+          "Become a confident, self-aware, emotionally intelligent man who leads with purpose and integrity.",
+          "Live as a badass motherfucker who doesn’t dim his light and lifts others up.",
+          "Embody balance, consistency, authenticity; lead from clarity not ego."
+        ],
+        "Values & What You Stand For": [
+          "Integrity, Honesty, Transparency, Growth mindset",
+          "Emotional strength & empathy",
+          "Smart work, efficiency, systems thinking",
+          "Innovation & ethical AI",
+          "Health, agility, flexibility, aesthetics",
+          "Coaching, mentorship, relationship-orientation",
+          "Open-mindedness, non-judgement, courage"
+        ],
+        "Purpose Sentences": [
+          "Solve complex problems & empower people through strategy + technology + compassion.",
+          "Bridge innovation with humanity; guide others to alignment through systems, insight, clarity."
+        ]
+      },
+      "Macro Outcome Goals": {
+        "Health & Wellness": [
+          "Weigh 185-190 lbs at ≤12% body-fat; achieve L-sit→handstand + crow→handstand; glute mobility 30 cm pancake fold",
+          "DEXA scan & skill video evidence"
+        ],
+        "Career & Business": [
+          "SERVPRO → $2M gross, involvement capped at 20-30% (≤14h/week)",
+          "TechJoint / AI side ventures → $160K/yr personal income"
+        ],
+        "Finance & Assets": [
+          "Buy first home (≤$650K, ≥15% cash down)",
+          "Passive income ≥ $3K/mo (stocks, REITs, course royalties)"
+        ]
+      }
+      // Additional master domains truncated for brevity
+    };
+
+    function createAccordion(title, content) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'border rounded shadow';
+
+      const button = document.createElement('button');
+      button.className = 'w-full text-left px-4 py-2 bg-indigo-600 text-white';
+      button.textContent = title;
+      button.dataset.accordionTarget = title.replace(/\s+/g, '-');
+      wrapper.appendChild(button);
+
+      const panel = document.createElement('div');
+      panel.id = button.dataset.accordionTarget;
+      panel.className = 'p-4 hidden';
+
+      const ul = document.createElement('ul');
+      ul.className = 'list-disc pl-5 space-y-1';
+      content.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        ul.appendChild(li);
+      });
+      panel.appendChild(ul);
+      wrapper.appendChild(panel);
+
+      return wrapper;
+    }
+
+    function buildKnowledgeBase(data) {
+      const container = document.getElementById('kb-container');
+      Object.entries(data).forEach(([section, subsections]) => {
+        const topAcc = createAccordion(section, []);
+        const panel = topAcc.querySelector('div');
+        Object.entries(subsections).forEach(([sub, bullets]) => {
+          panel.appendChild(createAccordion(sub, bullets));
+        });
+        container.appendChild(topAcc);
+      });
+    }
+
+    function initAccordionBehavior() {
+      document.querySelectorAll('button[data-accordion-target]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = document.getElementById(btn.dataset.accordionTarget);
+          const section = btn.closest('div');
+          section.querySelectorAll('div[id]').forEach(div => {
+            if (div !== target) div.classList.add('hidden');
+          });
+          target.classList.toggle('hidden');
+        });
+      });
+    }
+
+    function initSearch() {
+      const input = document.getElementById('search');
+      input.addEventListener('input', () => {
+        const query = input.value.toLowerCase();
+        document.querySelectorAll('#kb-container li').forEach(li => {
+          li.style.display = li.textContent.toLowerCase().includes(query) ? '' : 'none';
+        });
+      });
+    }
+
+    buildKnowledgeBase(knowledgeBase);
+    initAccordionBehavior();
+    initSearch();
+  </script>
+</body>
+</html>

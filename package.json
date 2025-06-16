@@ -1,0 +1,13 @@
+{
+  "name": "2025june",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "build-context": "ts-node scripts/build-context.ts",
+    "postinstall": "npm run build-context",
+    "test": "jest"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "domain": "1 Identity & Vision",
+    "sub": "Identity Statements",
+    "text": "Become \"a confident, self-aware, emotionally intelligent man who leads with purpose and integrity.\"",
+    "type": "goal"
+  },
+  {
+    "domain": "1 Identity & Vision",
+    "sub": "Identity Statements",
+    "text": "Live as a \"badass motherfucker\" who \"doesn't dim his light\" and \"lifts others up.\"",
+    "type": "goal"
+  },
+  {
+    "domain": "1 Identity & Vision",
+    "sub": "Purpose",
+    "text": "Solve complex problems & empower people through strategy + technology + compassion.",
+    "type": "goal"
+  },
+  {
+    "domain": "2 Macro Outcome Goals",
+    "sub": "Health & Wellness",
+    "text": "Weigh 185-190 lbs at ≤12% body-fat; achieve L-sit→handstand + crow→handstand; glute mobility 30 cm pancake fold",
+    "type": "goal"
+  },
+  {
+    "domain": "2 Macro Outcome Goals",
+    "sub": "Career & Business",
+    "text": "SERVPRO → $2M gross, involvement to 20-30%",
+    "type": "goal"
+  },
+  {
+    "domain": "2 Macro Outcome Goals",
+    "sub": "Finance & Assets",
+    "text": "Buy first home (budget ≤ $650K, cash down ≥ 15%)",
+    "type": "goal"
+  }
+]
