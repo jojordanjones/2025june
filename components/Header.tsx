@@ -15,6 +15,7 @@ export default function Header() {
         <Link href="#manifesto" className="hover:underline">Manifesto</Link>
         <Link href="#goals" className="hover:underline">Goal Map</Link>
         <Link href="#knowledge" className="hover:underline">Knowledge Base</Link>
+        <Link href="/regimen" className="hover:underline">Regimen</Link>
       </nav>
       <input
         type="range"
